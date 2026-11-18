@@ -39,3 +39,11 @@ Browser checks cover the main flow, travel follow-up, revision, required input f
 ## Interface revision
 
 The conversation shell was revised after reviewing a privately supplied screen recording: white chat background, gray assistant bubbles, pink user bubbles, a compact Flo header and bottom answer panel. The new optional text field sits inside that panel. Reference frames and personal information from the recording are not included in this repository or build. Copy and conversation scenarios remain fictional; this is not a full reproduction of the app.
+
+## Article search
+
+The Insights concept indexes six hand-selected public Flo articles, with local keyword search, manually provided Russian/English topic keywords and category filters. These are live source links, not reproduced article bodies or AI-generated medical answers. The index is not connected to Flo's CMS or full content catalogue. No raw chat text is automatically passed to search or an external service. Opening search from the chat preserves the conversation and draft in component memory; it is cleared on refresh.
+
+Sources are listed in `src/library.ts`. A link preview identifies Flo as the publisher and opens the original article in a separate tab. Search includes empty-state messaging and a clear-filter action. Five search tests cover bilingual keywords, normalization, combined filters, multi-word search and empty results. There are ten unit tests in total.
+
+Flo already provides a Symptom Checker (https://flo.health/product-tour/symptom-checker); this proposal concerns content discovery. The missing-search observation refers only to the section the author used, not every app version. A future AI layer grounded in clinically reviewed content remains proposed, not implemented.
